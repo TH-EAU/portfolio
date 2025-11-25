@@ -1,9 +1,11 @@
-import { Container, Heading, Stack, IconButton, Center, HStack, Box, Image, Drawer } from "@chakra-ui/react";
+import { Container, Heading, Stack, IconButton, Center, HStack, Box, Image, Drawer, Tag, Link } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import FadeInWrapper from "../ui/fade_in_wrapper";
 
-const PageLayout: React.FC<{ caption: string, pageName: string, children: ReactNode }> = ({ pageName, caption, children }) => {
+
+
+const PageLayout: React.FC<{ caption: string, pageName: string, tags?: string[], description: string, children: ReactNode }> = ({ pageName, caption, tags, description, children }) => {
     return (
         <>
             <Box position="relative">
@@ -30,12 +32,19 @@ const PageLayout: React.FC<{ caption: string, pageName: string, children: ReactN
                                     <Heading lineHeight={1} fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }} fontWeight="normal"   >{pageName}</Heading>
 
                                 </HStack>
-                                <Heading fontSize="xl" fontWeight="normal"  >React Three Fiber | Game</Heading>
+                                <Heading fontSize="xl" fontWeight="normal"  >{description}</Heading>
+                                <HStack justify="center" wrap="nowrap" >
+                                    {tags?.map((t) => <Tag.Root key={t}>
+                                        <Tag.Label>{t}</Tag.Label>
+                                    </Tag.Root>)}
+                                </HStack>
                             </Stack>
                         </Center>
                     </FadeInWrapper>
-                    <Container maxW="4xl">
-                        {children}
+                    <Container maxW="4xl" >
+                        <Stack gap={8}>
+                            {children}
+                        </Stack>
                     </Container>
                 </Container>
             </Box>

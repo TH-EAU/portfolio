@@ -1,7 +1,6 @@
 import { Box, Button, CloseButton, Drawer, HStack, IconButton, Image, Portal, Stack, type DrawerOpenChangeDetails } from "@chakra-ui/react"
 import { useState } from "react"
 import { LuGithub, LuLinkedin, LuWaves } from "react-icons/lu"
-import { MdDarkMode } from "react-icons/md"
 import { Link as ScrollLink } from "react-scroll"
 
 const Navbar: React.FC<{ essential?: boolean }> = ({ essential }) => {
@@ -37,10 +36,10 @@ const Navbar: React.FC<{ essential?: boolean }> = ({ essential }) => {
                 p={3}
                 hideBelow="md">
                 <ScrollLink to="work" duration={500} offset={-80} smooth>
-                    <Button position="relative" rounded="full" variant="ghost">Work</Button>
+                    <Button position="relative" rounded="full" variant="ghost">Projets</Button>
                 </ScrollLink>
                 <ScrollLink to="about" duration={500} offset={-80} smooth>
-                    <Button rounded="full" variant="ghost">About</Button>
+                    <Button rounded="full" variant="ghost">A propos</Button>
                 </ScrollLink>
                 <ScrollLink to="contact" duration={500} offset={-80} smooth>
                     <Button rounded="full" variant="ghost">Contact</Button>

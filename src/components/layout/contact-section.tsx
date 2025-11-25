@@ -105,7 +105,7 @@ const ContactSection = () => {
                             <Box backgroundColor="orange.fg" w={3} h={3} rounded="full" />
                         </HStack>
                         <Text>
-                            N'hésitez pas à me laisser un beau message
+                            N'hésitez pas à me laisser un message
                         </Text>
                     </Stack>
                     <form onSubmit={handleSubmit}>

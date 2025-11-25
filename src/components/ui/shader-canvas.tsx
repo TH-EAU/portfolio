@@ -26,7 +26,7 @@ const ShaderCanvas: React.FC = () => {
   uniform float iTime;
 
   float random(vec2 st) {
-    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 435758.5453123);
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 36659.5453125);
   }
 
   float noise(vec2 st) {
@@ -98,7 +98,7 @@ const ShaderCanvas: React.FC = () => {
 
   void main() {
     vec2 uv = gl_FragCoord.xy / iResolution.xy;
-    float time = iTime * 0.1;
+    float time = iTime * 0.05;
 
     // Calculer la distance une seule fois
     float dist = edgeDistance(uv);

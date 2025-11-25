@@ -5,6 +5,7 @@ import FadeInWrapper from "./components/ui/fade_in_wrapper"
 import AboutSection from "./components/layout/about-section"
 import ContactSection from "./components/layout/contact-section"
 import { Box } from "@chakra-ui/react"
+import WelcomeSection from "./components/welcome-section"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Box >
       <Navbar />
       <HeroSection />
+      <WelcomeSection />
       <FadeInWrapper>
         <WorkSection />
       </FadeInWrapper>

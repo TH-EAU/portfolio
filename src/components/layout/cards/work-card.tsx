@@ -17,7 +17,7 @@ export const WorkCard: React.FC<{ work: Work }> = ({ work }) => {
             >
                 <Image
                     src={work.caption}
-                    alt={work.name}
+                    alt={work.captionAlt}
                     objectFit="cover"
                     w="full"
                     h="full"
@@ -30,7 +30,7 @@ export const WorkCard: React.FC<{ work: Work }> = ({ work }) => {
                     <FiArrowUpRight />
                 </HStack>
                 <Text fontSize="xs" textTransform="uppercase" color="gray.400">
-                    Description
+                    {work.overview}
                 </Text>
             </Stack>
         </Stack>
@@ -39,16 +39,16 @@ export const WorkCard: React.FC<{ work: Work }> = ({ work }) => {
 
 const WorkCaptionCard: React.FC<{ work: Work }> = ({ work }) => {
     return (
-        <Drawer.Root size="xl">
+        <Drawer.Root size="xl" >
             <Drawer.Trigger asChild>
                 <Box>
                     <WorkCard work={work} />
                 </Box>
             </Drawer.Trigger>
             <Portal>
-                <Drawer.Backdrop />
+                <Drawer.Backdrop backdropFilter="blur(10px)" />
                 <Drawer.Positioner>
-                    <Drawer.Content>
+                    <Drawer.Content m={5} overflowX="scroll" rounded="4xl" mx="auto" scrollbarColor="#5512 transparent" scrollbarWidth="thin">
                         <work.page />
                     </Drawer.Content>
                 </Drawer.Positioner>

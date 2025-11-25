@@ -11,14 +11,13 @@ const WorkSection = () => {
 
             <Box as="section" py={{ base: 12, md: 56 }} >
                 <Container maxW="5xl" >
-
                     <Stack id="work" gap={4} mt={18} mb={10}>
-                        <HStack align="end">
-                            <Heading fontSize={{ base: "3xl", md: "5xl" }} >Work</Heading>
+                        <HStack align="center">
+                            <Heading fontSize={{ base: "3xl", md: "5xl" }} >Mes projets</Heading>
                             <Box backgroundColor="orange.fg" w={3} h={3} rounded="full" />
                         </HStack>
                         <Text>
-                            Parcourez mes projets et réalisations
+                            Découvrez quelques-uns de mes projets et réalisations personnelles
                         </Text>
                     </Stack>
 

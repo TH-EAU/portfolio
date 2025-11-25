@@ -1,4 +1,4 @@
-import { Heading, HStack, Center, Avatar, Box, Stack, GridItem, Grid } from "@chakra-ui/react"
+import { Heading, HStack, Center, Avatar, Box, Stack } from "@chakra-ui/react"
 import ShaderCanvas from "../ui/shader-canvas"
 import FadeInWrapper from "../ui/fade_in_wrapper"
 
@@ -18,6 +18,7 @@ const HeroSection = () => {
                 overflow="hidden"
                 backgroundColor="#09090b"
                 color="white"
+                opacity={.7}
             >
                 <ShaderCanvas />
             </Box>
@@ -26,8 +27,9 @@ const HeroSection = () => {
             <Stack pt={32} h="90vh"
                 px={{ base: 4, md: 32, lg: 48 }}
                 py={0}
+                backdropFilter="saturate(2)"
             >
-                <HStack py={{ base: 24, md: 24, xl: 24 }} borderLeft="1px solid" borderColor="#FFF2">
+                <HStack py={{ base: 24, md: 24, xl: 24 }} mt={{ base: 5, md: 20 }} borderLeft="1px solid" borderColor="#FFF2">
                     <Stack borderTop="1 px solid" borderColor="#FFF2" >
                         <Center pb={4}>
                             <HStack>
@@ -46,8 +48,9 @@ const HeroSection = () => {
                                 fontWeight="normal"
                                 letterSpacing={-3}
                                 lineHeight={1.2}
-                                textAlign="left"
+                                textAlign={{ base: "center", md: "left" }}
                             >Quand la logique rencontre la créativité, naît l’impact </Heading>
+
                         </FadeInWrapper>
                         <Box
                             borderLeft="3px solid"
@@ -61,12 +64,14 @@ const HeroSection = () => {
                             );"
                             backgroundSize="10px 10px"
                             backdropFilter="hue-rotate(350deg)"
-                            h={100}
+                            h={70}
                             w="full"
                             backgroundPosition='5px 5px'
+                            opacity={.5}
                         />
+
                     </Stack>
-                    <Stack justify="end" h="full" w="20%" borderLeft="1px solid" borderColor="#FFF2">
+                    <Stack hideBelow="md" justify="end" h="full" w="20%" borderLeft="1px solid" borderColor="#FFF2">
                         <Box
                             w="full"
                             h={100}
