@@ -63,7 +63,7 @@ const workList: Work[] = [
         slug: "micromarket-simulator",
         caption: "/portefolio/micro_complete.png",
         captionAlt: "Capture d'écran de mircomarket simulator",
-        overview: "Un casque de réalité vrituelle pour moins de 30€",
+        overview: "Un mini jeu en React-Three-Fiber",
         tags: ["game", "3D", "WebGL"],
         page: MicroMarketSimulator,
         status: ProjectStatus.PENDING

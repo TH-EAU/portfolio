@@ -1,14 +1,10 @@
-import { Box, Button, CloseButton, Drawer, HStack, IconButton, Image, Portal, Stack, type DrawerOpenChangeDetails } from "@chakra-ui/react"
-import { useState } from "react"
-import { LuGithub, LuLinkedin, LuWaves } from "react-icons/lu"
+import { Box, Button, Center, HStack, IconButton, Image } from "@chakra-ui/react"
+import { LuGithub, LuLinkedin, } from "react-icons/lu"
 import { Link as ScrollLink } from "react-scroll"
 
 const Navbar: React.FC<{ essential?: boolean }> = ({ essential }) => {
-    const [open, setOpen] = useState(false)
 
-    const handleOpenMobileMenu = (e: DrawerOpenChangeDetails) => {
-        setOpen(e.open)
-    }
+
 
     return (
         <HStack zIndex={2} position="fixed" top={0} left={0} w="full" p={4} justify="space-between">
@@ -57,69 +53,44 @@ const Navbar: React.FC<{ essential?: boolean }> = ({ essential }) => {
                 <IconButton rounded="full" variant="ghost"><a target="_blank" href="https://www.linkedin.com/in/th%C3%A9au-nicolas/" ><LuLinkedin /></a></IconButton>
                 <IconButton rounded="full" variant="ghost"><a target="_blank" href="https://github.com/TH-EAU" ><LuGithub /></a></IconButton>
             </HStack>
-            <Drawer.Root size="full" open={open} onOpenChange={handleOpenMobileMenu} >
-                <Drawer.Trigger asChild>
-                    <IconButton
-                        hideFrom="md"
-                        rounded="full"
-                        overflow="hidden"
-                        border="1px solid #2225"
-                        variant="ghost"
-                        backgroundColor="#1115"
+
+            <IconButton
+                hideFrom="md"
+                rounded="full"
+                overflow="hidden"
+                border="1px solid #2225"
+                variant="ghost"
+                backgroundColor="#1115"
+                backdropFilter="blur(10px)"
+                p={2}>
+                <a target="_blank" href="https://www.linkedin.com/in/th%C3%A9au-nicolas/" ><LuLinkedin /></a>
+            </IconButton>
+
+            <Box position="absolute" bottom="-85vh" hideFrom="md" w="full" left={0}>
+                <Center>
+
+                    <HStack rounded="full"
+                        backgroundColor={{ base: "#FFFA", _dark: "#1115" }}
                         backdropFilter="blur(10px)"
-                        p={2}>
-                        <LuWaves />
-                    </IconButton>
-                </Drawer.Trigger>
-                {/* <Drawer.Backdrop /> */}
-                <Portal>
-                    <Drawer.Positioner p={3} >
-
-                        <Drawer.Content
-                            backgroundColor="rgba(169, 73, 25, 0.6)"
-                            backdropFilter="blur(10px)"
-                            rounded="3xl"
-
-                        >
-                            <Drawer.Header>
-                                <Box
-                                    rounded="full"
-                                    backgroundColor="#1115"
-                                    backdropFilter="blur(10px)"
-                                    border="1px solid #2225"
-                                    p={2} >
-                                    <Image mixBlendMode="luminosity" w={{ base: 5, md: 10 }} src="/portefolio/tn.png" />
-                                </Box>
-                            </Drawer.Header>
-                            <Drawer.Body>
-                                <MobileNavbar />
-                            </Drawer.Body>
-                            <Drawer.CloseTrigger asChild>
-                                <CloseButton size="sm" />
-                            </Drawer.CloseTrigger>
-                        </Drawer.Content>
-                    </Drawer.Positioner>
-                </Portal>
-            </Drawer.Root>
+                        border="1px solid #2225"
+                        p={1}
+                        justify="space-between"
+                    >
+                        <ScrollLink to="work" duration={500} offset={-80} smooth>
+                            <Button rounded="full" variant="ghost" >Work</Button>
+                        </ScrollLink>
+                        <ScrollLink to="about" duration={500} offset={-80} smooth>
+                            <Button rounded="full" variant="ghost" >About</Button>
+                        </ScrollLink>
+                        <ScrollLink to="contact" duration={500} offset={-80} smooth>
+                            <Button rounded="full" variant="ghost">Contact</Button>
+                        </ScrollLink>
+                    </HStack>
+                </Center>
+            </Box>
         </HStack>
     )
 }
 
 export default Navbar
 
-
-const MobileNavbar = () => {
-    return (
-        <Stack align="start" >
-            <ScrollLink to="work" duration={500} offset={-80} smooth>
-                <Button rounded="full" variant="ghost">Work</Button>
-            </ScrollLink>
-            <ScrollLink to="about" duration={500} offset={-80} smooth>
-                <Button rounded="full" variant="ghost">About</Button>
-            </ScrollLink>
-            <ScrollLink to="contact" duration={500} offset={-80} smooth>
-                <Button rounded="full" variant="ghost">Contact</Button>
-            </ScrollLink>
-        </Stack>
-    )
-}

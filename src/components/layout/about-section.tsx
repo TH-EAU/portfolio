@@ -37,7 +37,7 @@ const AboutSection = () => {
                             </Text>
                             <HStack >
                                 <ChakraLink as="span" fontSize="xs" >
-                                    <a target="_blank" href="/portefolio/documents/output.pdf">
+                                    <a target="_blank" href="/portefolio/documents/CV_Théau_NICOLAS.pdf">
                                         Voir mon CV
                                     </a>
                                 </ChakraLink>
@@ -118,7 +118,7 @@ const AboutSection = () => {
                                 </HStack>
                             </Stack>
                         </GridItem>
-                        <GridItem colSpan={2}>
+                        <GridItem colSpan={{ base: 5, md: 2 }}>
                             <Heading as="h2" fontSize="sm" lineHeight={1.4}>Parcours</Heading></GridItem>
                         <GridItem colSpan={10}>
                             <Timeline.Root variant="subtle" >

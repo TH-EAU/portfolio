@@ -4,13 +4,13 @@ import WorkSection from "./components/layout/work-section"
 import FadeInWrapper from "./components/ui/fade_in_wrapper"
 import AboutSection from "./components/layout/about-section"
 import ContactSection from "./components/layout/contact-section"
-import { Box } from "@chakra-ui/react"
-import WelcomeSection from "./components/welcome-section"
+import { Stack } from "@chakra-ui/react"
+import WelcomeSection from "./components/layout/welcome-section"
 
 
 function App() {
   return (
-    <Box >
+    <Stack gap={24} >
       <Navbar />
       <HeroSection />
       <WelcomeSection />
@@ -23,7 +23,7 @@ function App() {
       <FadeInWrapper>
         <ContactSection />
       </FadeInWrapper>
-    </Box>
+    </Stack>
   )
 }
 

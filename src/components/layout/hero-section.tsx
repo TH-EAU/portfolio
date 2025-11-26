@@ -1,6 +1,7 @@
 import { Heading, HStack, Center, Avatar, Box, Stack } from "@chakra-ui/react"
 import ShaderCanvas from "../ui/shader-canvas"
 import FadeInWrapper from "../ui/fade_in_wrapper"
+import { Link as ScrollLink } from "react-scroll"
 
 const HeroSection = () => {
     return (
@@ -29,27 +30,29 @@ const HeroSection = () => {
                 py={0}
                 backdropFilter="saturate(2)"
             >
-                <HStack py={{ base: 24, md: 24, xl: 24 }} mt={{ base: 5, md: 20 }} borderLeft="1px solid" borderColor="#FFF2">
+                <HStack py={{ base: 24, md: 24, xl: 24 }} mt={{ base: 5, md: 20 }} borderLeft={{ base: "none", md: "1px solid #FFF2" }} >
                     <Stack borderTop="1 px solid" borderColor="#FFF2" >
-                        <Center pb={4}>
-                            <HStack>
-                                <Avatar.Root size="xl">
-                                    <Avatar.Image src="/portefolio/profile.jpeg" />
-                                    <Avatar.Fallback name="Théau Nicolas" />
-                                </Avatar.Root>
-                                <Heading fontSize="xl" color="white" fontWeight="light">Théau Nicolas</Heading>
-                            </HStack>
+                        <Center pb={4} cursor="pointer" >
+                            <ScrollLink to="welcome" duration={500} offset={-80} smooth>
+                                <HStack>
+                                    <Avatar.Root size="xl">
+                                        <Avatar.Image src="/portefolio/profile.png" />
+                                        <Avatar.Fallback name="Théau Nicolas" />
+                                    </Avatar.Root>
+                                    <Heading fontSize="xl" color="white" fontWeight="light">Théau Nicolas</Heading>
+                                </HStack>
+                            </ScrollLink>
                         </Center>
                         <FadeInWrapper>
                             <Heading
                                 as="h1"
                                 color="white"
-                                fontSize={{ base: "5xl", md: "7xl", lg: "8xl" }}
+                                fontSize={{ base: "5xl", md: "7xl", xl: "8xl" }}
                                 fontWeight="normal"
                                 letterSpacing={-3}
                                 lineHeight={1.2}
                                 textAlign={{ base: "center", md: "left" }}
-                            >Quand la logique rencontre la créativité, naît l’impact </Heading>
+                            >La rencontre de la logique et de la créativité créé l’impact </Heading>
 
                         </FadeInWrapper>
                         <Box
@@ -118,7 +121,7 @@ const HeroSection = () => {
                 </HStack> */}
 
 
-            </Stack>
+            </Stack >
 
 
         </>

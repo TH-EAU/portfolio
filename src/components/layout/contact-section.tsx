@@ -83,8 +83,6 @@ const ContactSection = () => {
         <>
             <Toaster />
             <Container as="section" mt={24} pt={90} maxW="5xl" position="relative" >
-
-
                 <Box
                     top={0}
                     left={0}
@@ -94,9 +92,13 @@ const ContactSection = () => {
                     rounded={0}
                     w="full"
                     h="full"
-                    overflow="hidden">
+                    overflow="hidden"
+                    filter="saturate(2) hue-rotate(130deg)"
+                >
                     <ShaderCanvas />
                 </Box>
+
+
 
                 <Box backgroundColor={{ base: "white", _dark: "#09090b" }} pt={24} id="contact" maxW="md" mx="auto" p={6} borderWidth={1} borderRadius="lg">
                     <Stack gap={4} mt={18} mb={10}>

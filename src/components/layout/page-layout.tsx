@@ -1,4 +1,4 @@
-import { Container, Heading, Stack, IconButton, Center, HStack, Box, Image, Drawer, Tag, Link } from "@chakra-ui/react";
+import { Container, Heading, Stack, IconButton, Center, HStack, Box, Image, Drawer, Tag } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import FadeInWrapper from "../ui/fade_in_wrapper";
